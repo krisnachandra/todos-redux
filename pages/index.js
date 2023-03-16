@@ -11,7 +11,6 @@ const HomeIndex = () => {
       </div>
       <div className={styles.wrapperContainer}>
         <TodoAppAdd />
-        {/* <TodoAppShow /> */}
         <TodoShow />
       </div>
     </>
