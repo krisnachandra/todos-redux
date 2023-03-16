@@ -1,5 +1,6 @@
 import TodoAppAdd from "@/components/TodoAppAdd";
 import TodoAppShow from "@/components/TodoAppShow";
+import TodoShow from "@/components/TodoShow";
 import styles from "../styles/Home.module.css";
 
 const HomeIndex = () => {
@@ -10,7 +11,8 @@ const HomeIndex = () => {
       </div>
       <div className={styles.wrapperContainer}>
         <TodoAppAdd />
-        <TodoAppShow />
+        {/* <TodoAppShow /> */}
+        <TodoShow />
       </div>
     </>
   );
