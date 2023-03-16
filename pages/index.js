@@ -1,5 +1,4 @@
 import TodoAppAdd from "@/components/TodoAppAdd";
-import TodoAppShow from "@/components/TodoAppShow";
 import TodoShow from "@/components/TodoShow";
 import styles from "../styles/Home.module.css";
 
