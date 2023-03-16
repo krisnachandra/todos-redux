@@ -50,9 +50,18 @@ const todoSlice = createSlice({
       const showedTodos = state.todos.slice(startIndex, endIndex);
       return { ...state, pagination: action.payload, showedTodos };
     },
+
+    setSearchFilter: (state, action) => {
+      return { ...state, searchFilter: action.payload };
+    },
   },
 });
 
-export const { setTodos, setSortId, setSortTitle, setPagination } =
-  todoSlice.actions;
+export const {
+  setTodos,
+  setSortId,
+  setSortTitle,
+  setPagination,
+  setSearchFilter,
+} = todoSlice.actions;
 export default todoSlice.reducer;

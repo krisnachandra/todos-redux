@@ -8,16 +8,15 @@ import {
   setSortId,
   setSortTitle,
   setPagination,
+  setSearchFilter,
 } from "@/features/todoSlice";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 
 const TodoShow = () => {
-  const [textSearch, setTextSearch] = useState("");
   const dispatch = useDispatch();
-  const { sortId, sortTitle, pagination, showedTodos } = useSelector(
-    (store) => store.todos
-  );
+  const { sortId, sortTitle, pagination, showedTodos, searchFilter } =
+    useSelector((store) => store.todos);
 
   const loadDatatodos = () => {
     axios
@@ -45,8 +44,8 @@ const TodoShow = () => {
         <input
           type="text"
           placeholder="Search"
-          // value={textSearch}
-          onChange={(e) => setTextSearch(e.target.value)}
+          value={searchFilter}
+          onChange={(e) => dispatch(setSearchFilter(e.target.value))}
           className="input-search"
         />
       </div>
@@ -70,13 +69,15 @@ const TodoShow = () => {
             </th>
             <th>Completed</th>
           </tr>
-          {showedTodos.map((todo, i) => (
-            <tr key={`todos-${todo.id}`}>
-              <td>{todo.id}</td>
-              <td>{todo.title}</td>
-              <td>{todo.completed.toString()}</td>
-            </tr>
-          ))}
+          {showedTodos
+            .filter((text) => text.title.toLowerCase().includes(searchFilter))
+            .map((todo, i) => (
+              <tr key={`todos-${todo.id}`}>
+                <td>{todo.id}</td>
+                <td>{todo.title}</td>
+                <td>{todo.completed.toString()}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <Pagination
