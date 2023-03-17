@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
 
 const TodoAppAdd = () => {
   const [title, setTitle] = useState({ title: "" });
@@ -8,8 +7,6 @@ const TodoAppAdd = () => {
     isError: false,
     errorMessage: "",
   });
-
-  const { todos } = useSelector((store) => store.todos);
 
   const regTitle = /[0-9a-zA-Z]{6,}/;
 
@@ -57,12 +54,16 @@ const TodoAppAdd = () => {
               onBlur={validate}
               className="input-title"
             />
-            {errorTitle.isError && (
-              <span className="error">{errorTitle.errorMessage}</span>
-            )}
+            <div>
+              {errorTitle.isError && (
+                <span style={{ color: "red" }} className="error">
+                  {errorTitle.errorMessage}
+                </span>
+              )}
+            </div>
           </div>
         </div>
-        <div>
+        <div className="container-button">
           <button
             onClick={() => {
               if (errorTitle.isError) return;

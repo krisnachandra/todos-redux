@@ -1,13 +1,13 @@
 import React from "react";
 
-const pages = Array.from(Array(12).keys());
+const pages = Array.from(Array(10).keys());
 
-const Pagination = ({ page, onChange }) => {
+const Pagination = ({ pagination, onChange }) => {
   return (
     <div className="container-pagination">
       {pages.map((item) => (
         <div
-          className={`item-pagination ${page === item ? "active" : ""}`}
+          className={`item-pagination ${pagination === item ? "active" : ""}`}
           onClick={() => onChange(item)}
         >
           {item + 1}

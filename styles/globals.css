@@ -2,9 +2,6 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    display: block;
-    height: calc(100vh - 500px);
-    overflow-y: scroll;
   }
   
   td, th {
@@ -14,8 +11,6 @@ table {
 
   }
 
-  
-  
   tr:nth-child(even) {
     background-color: #dddddd;
   }
@@ -25,7 +20,10 @@ table {
   }
 
   .input-search{
-    width: 100%;
+    width: 300px;
+    height: 30px;
+    padding-left: 34px;
+    padding-right: 10px;
     margin-bottom: 10px;
   }
 
@@ -34,12 +32,24 @@ table {
   }
 
   .container-submit{
-    height: 90px;
+    height: 300px;
+    width: 50%;
     border: 1px solid #dddddd;
     border-radius: 4px;
-    padding: 10px;
-    margin-right: 10px;
+    padding: 40px;
   }
+  
+    .container-submit input {
+      height: 50px;
+      width: 100%;
+      padding-left: 10px;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+
+        .container-submit label {
+          font-size: 30px;
+        }
 
   .container-pagination{
     margin-top: 10px;
@@ -51,10 +61,15 @@ table {
     display: flex;
   }
 
-  .column-header div {
+  .column-header {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    /* justify-content: space-between; */
   }
+
+    .column-header div {
+      padding-left: 10px;
+    }
 
   .container-pagination{
     display: flex;
@@ -74,4 +89,29 @@ table {
 
   .active{
     background-color: #210000;
+  }
+
+  .container-button {
+    padding-top: 10px;
+  }
+
+  .container-button button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .icon-search {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 6px;
+    font-size: 20px;
   }
