@@ -40,34 +40,38 @@ const TodoShow = () => {
 
   return (
     <div className={styles.boxtodoshow}>
-      <div className={styles.containerSearch}>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchFilter}
-          onChange={(e) => dispatch(setSearchFilter(e.target.value))}
-          className="input-search"
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Search"
+        value={searchFilter}
+        onChange={(e) => dispatch(setSearchFilter(e.target.value))}
+        className="input-search"
+      />
 
       <table>
         <tbody>
           <tr>
             <th>
               <div className="column-header">
-                <span onClick={handlerSortId}>Id</span>
-                <span>{handlerSortId ? <FaAngleUp /> : <FaAngleDown />}</span>
+                <span onClick={handlerSortId}>ID</span>
+                <div>
+                  <span>
+                    {sortId == "asc" ? <FaAngleUp /> : <FaAngleDown />}
+                  </span>
+                </div>
               </div>
             </th>
             <th>
               <div className="column-header">
-                <span onClick={handlerSortTitle}>Title</span>
-                <span>
-                  {handlerSortTitle ? <FaAngleUp /> : <FaAngleDown />}
-                </span>
+                <span onClick={handlerSortTitle}>TITLE</span>
+                <div>
+                  <span>
+                    {sortTitle === "asc" ? <FaAngleUp /> : <FaAngleDown />}
+                  </span>
+                </div>
               </div>
             </th>
-            <th>Completed</th>
+            <th>STATUS</th>
           </tr>
           {showedTodos
             .filter((text) => text.title.toLowerCase().includes(searchFilter))

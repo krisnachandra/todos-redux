@@ -44,21 +44,21 @@ const TodoAppAdd = () => {
         <div>
           <label>Title</label>
           <div>
-            <div>
-              <input
-                placeholder="Input title"
-                type="text"
-                id="title"
-                name="title"
-                value={title.title}
-                onChange={(e) => setTitle(e.target.value, title)}
-                onBlur={validate}
-                className="input-title"
-              />
-            </div>
+            <input
+              placeholder="Input title"
+              type="text"
+              id="title"
+              name="title"
+              value={title.title}
+              onChange={(e) => setTitle(e.target.value, title)}
+              onBlur={validate}
+              className="input-title"
+            />
             <div>
               {errorTitle.isError && (
-                <span className="error">{errorTitle.errorMessage}</span>
+                <span style={{ color: "red" }} className="error">
+                  {errorTitle.errorMessage}
+                </span>
               )}
             </div>
           </div>

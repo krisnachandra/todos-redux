@@ -2,8 +2,6 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    height: calc(100vh - 500px);
-
   }
   
   td, th {
@@ -13,8 +11,6 @@ table {
 
   }
 
-  
-  
   tr:nth-child(even) {
     background-color: #dddddd;
   }
@@ -24,7 +20,10 @@ table {
   }
 
   .input-search{
-    width: 100%;
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 10px;
   }
 
@@ -33,12 +32,24 @@ table {
   }
 
   .container-submit{
-    height: 130px;
+    height: 300px;
+    width: 50%;
     border: 1px solid #dddddd;
     border-radius: 4px;
-    padding: 10px;  
-    margin-right: 10px;
+    padding: 40px;
   }
+  
+    .container-submit input {
+      height: 50px;
+      width: 100%;
+      padding-left: 10px;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+
+        .container-submit label {
+          font-size: 30px;
+        }
 
   .container-pagination{
     margin-top: 10px;
@@ -50,10 +61,15 @@ table {
     display: flex;
   }
 
-  .column-header div {
+  .column-header {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    /* justify-content: space-between; */
   }
+
+    .column-header div {
+      padding-left: 10px;
+    }
 
   .container-pagination{
     display: flex;
