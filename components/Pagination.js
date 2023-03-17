@@ -1,6 +1,6 @@
 import React from "react";
 
-const pages = Array.from(Array(12).keys());
+const pages = Array.from(Array(10).keys());
 
 const Pagination = ({ pagination, onChange }) => {
   return (

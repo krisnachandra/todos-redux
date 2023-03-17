@@ -2,9 +2,8 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    display: block;
     height: calc(100vh - 500px);
-    overflow-y: scroll;
+
   }
   
   td, th {
@@ -34,10 +33,10 @@ table {
   }
 
   .container-submit{
-    height: 90px;
+    height: 130px;
     border: 1px solid #dddddd;
     border-radius: 4px;
-    padding: 10px;
+    padding: 10px;  
     margin-right: 10px;
   }
 
@@ -74,4 +73,22 @@ table {
 
   .active{
     background-color: #210000;
+  }
+
+  .container-button {
+    padding-top: 10px;
+  }
+
+  .container-button button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
   }
