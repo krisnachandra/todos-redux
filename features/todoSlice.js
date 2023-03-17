@@ -28,7 +28,7 @@ const todoSlice = createSlice({
       const showedTodos = [...state.showedTodos].sort((a, b) => {
         return a.id < b.id ? -1 : 1;
       });
-      return { ...state, sortId: "asc", todos };
+      return { ...state, sortId: "asc", showedTodos };
     },
     setSortTitle: (state, action) => {
       let sortTitle = action.payload;
