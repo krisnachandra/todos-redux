@@ -22,7 +22,7 @@ table {
   .input-search{
     width: 300px;
     height: 30px;
-    padding-left: 10px;
+    padding-left: 34px;
     padding-right: 10px;
     margin-bottom: 10px;
   }
@@ -103,8 +103,15 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+  }
+
+  .icon-search {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 6px;
+    font-size: 20px;
   }

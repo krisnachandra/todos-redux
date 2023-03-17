@@ -12,6 +12,7 @@ import {
 } from "@/features/todoSlice";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import { IoSearchOutline } from "react-icons/io5";
 
 const TodoShow = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ const TodoShow = () => {
 
   return (
     <div className={styles.boxtodoshow}>
+      <div className="icon-search">
+        <IoSearchOutline />
+      </div>
       <input
         type="text"
         placeholder="Search"
@@ -79,7 +83,15 @@ const TodoShow = () => {
               <tr key={`todos-${todo.id}`}>
                 <td>{todo.id}</td>
                 <td>{todo.title}</td>
-                <td>{todo.completed.toString()}</td>
+                <td
+                  style={{
+                    color: `${
+                      todo.completed.toString() === "false" ? "red" : "green"
+                    }`,
+                  }}
+                >
+                  {todo.completed.toString()}
+                </td>
               </tr>
             ))}
         </tbody>
