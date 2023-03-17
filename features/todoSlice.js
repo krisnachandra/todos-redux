@@ -20,12 +20,12 @@ const todoSlice = createSlice({
     setSortId: (state, action) => {
       let sortId = action.payload;
       if (sortId === "asc") {
-        const todos = [...state.todos].sort((a, b) => {
+        const showedTodos = [...state.showedTodos].sort((a, b) => {
           return a.id < b.id ? 1 : -1;
         });
-        return { ...state, sortId: "desc", todos };
+        return { ...state, sortId: "desc", showedTodos };
       }
-      const todos = [...state.todos].sort((a, b) => {
+      const showedTodos = [...state.showedTodos].sort((a, b) => {
         return a.id < b.id ? -1 : 1;
       });
       return { ...state, sortId: "asc", todos };
@@ -33,15 +33,15 @@ const todoSlice = createSlice({
     setSortTitle: (state, action) => {
       let sortTitle = action.payload;
       if (sortTitle === "asc") {
-        const todos = [...state.todos].sort((a, b) => {
+        const showedTodos = [...state.showedTodos].sort((a, b) => {
           return a.title < b.title ? 1 : -1;
         });
-        return { ...state, sortId: "desc", todos };
+        return { ...state, sortTitle: "desc", showedTodos };
       }
-      const todos = [...state.todos].sort((a, b) => {
+      const showedTodos = [...state.showedTodos].sort((a, b) => {
         return a.title < b.title ? -1 : 1;
       });
-      return { ...state, sortTitle: "asc", todos };
+      return { ...state, sortTitle: "asc", showedTodos };
     },
 
     setPagination: (state, action) => {
